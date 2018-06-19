@@ -17,7 +17,8 @@
             <div class="nav-wrapper navbar-fixed">
                 <a href="index.html" class="brand-logo center"><img id="logo" src="assets/imgs/logo.png" alt="ADGTH Logo" /></a>
                 <span href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a></span>
-                <button class="right btn sign-up-btn modal-trigger" href="#sign-up">Sign Up</button>
+               <span class="right username" style="margin-right: 20px;" ></span>
+                <button class="right btn log-out-btn modal-trigger " href="#logout">Log Out</button>
             </div>
         </nav>
         <div class="container">
@@ -46,12 +47,12 @@
 <div id="add-shelter" class="modal">
     <div class="modal-content">
         <h4>Add a Shelter</h4>
-        <form>
+        <form id="shelter_add_form">
             <div id="shelter-form">
                 <div class="row">
                     <h6>Shelter Info</h6>
                     <div class="input-field col s6">
-                        <input id="shelter_name" type="text" class="validate">
+                        <input id="shelter_name" type="text" required="" class="validate">
                         <label for="shelter_name">Name</label>
                     </div>
                     <div class="input-field col s6">
@@ -73,7 +74,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#!" class="waves-effect waves-green btn-flat" id="add-shelter-button">Create</a>
+                    <input href="#!" class="waves-effect waves-green btn-flat" type="submit" id="add-shelter-button" value="Create" />
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
                 </div>
             </div>
@@ -86,16 +87,13 @@
 <div id="add-dog" class="modal">
     <div class="modal-content">
         <h4>Add Dog</h4>
-        <form class="container">
+        <form id="add_dog_form" class="container">
             <div id="dog-form">
                 <div class="row">
                     <h6>Shelter Info</h6>
                     <div id="shelter_id" class="col s12">
-                        <select class="browser-default">
-                        <option disabled selected>Select Shelter</option>
-                        <option value="1">Shelter 1</option>
-                        <option value="2">Shelter 2</option>
-                        <option value="3">Shelter 3</option>
+                        <select id="select_shelter" class="browser-default">
+                          <option disabled selected>Select Shelter</option>
                         </select>
                     </div>
                     <h6 class="mod-subtitle">Dog Info</h6>
@@ -113,64 +111,64 @@
                     </div>                             
                 </div>  
                 <div class="row">
-                   <div id="dog_size" class="col s3">
-                        <select class="browser-default">
+                   <div class="col s3">
+                        <select id="dog_size"  class="browser-default">
                             <option value="" disabled selected>Size</option>
-                            <option value="1">Small</option>
-                            <option value="2">Medium</option>
-                            <option value="3">Large</option>
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
                         </select>
                     </div> 
-                    <div id="gender" class="col s3">
-                        <select class="browser-default">
+                    <div  class="col s3">
+                        <select id="gender" class="browser-default">
                             <option value="" disabled selected>Gender</option>
-                            <option value="1">Male</option>
-                            <option value="2">Male (Neutered)</option>
-                            <option value="3">Female</option>
-                            <option value="4">Female (Spayed)</option>
+                            <option value="Male">Male</option>
+                            <option value="Male/Neutered">Male (Neutered)</option>
+                            <option value="Female">Female</option>
+                            <option value="Female/Spayed">Female (Spayed)</option>
                         </select>
                     </div>                                               
                     <div id="dog-select-age" class="col s3">
-                        <select class="browser-default">
+                        <select id="age" class="browser-default">
                             <option value="" disabled selected>Age</option>
-                            <option value="1">Under 1 Year</option>
-                            <option value="2">Over 1 Year</option>
+                            <option ivalue="0">Under 1 Year</option>
+                            <option value="1">Over 1 Year</option>
                         </select>
                     </div> 
                     <div id="dog-select-activity" class="col s3">
-                        <select class="browser-default">
+                        <select id="activity" class="browser-default">
                             <option value="" disabled selected>Activity </option>
-                            <option value="1">Let's Go Running</option>
-                            <option value="2">Playful</option>
-                            <option value="3">Couch Potato</option>
+                            <option value="Active">Let's Go Running</option>
+                            <option value="Playful">Playful</option>
+                            <option value="lazy">Couch Potato</option>
                         </select>                                         
                     </div> 
                 </div> 
                 <div class="row">
                    <div class="input-field col s4">
-                        <input class="likes" type="text" class="validate">
+                        <input class="likes" id="like_1" type="text" class="validate">
                         <label for="likes">Like 1</label>
                     </div>   
                     <div class="input-field col s4">
-                        <input class="likes" type="text" class="validate">
+                        <input class="likes"  id="like_2" type="text" class="validate">
                         <label for="likes">Like 2</label>
                     </div>     
                     <div class="input-field col s4">
-                        <input class="likes" type="text" class="validate">
+                        <input class="likes"  id="like_3" type="text" class="validate">
                         <label for="likes">Like 3</label>
                     </div>                                                   
                 </div>  
                 <div class="row">
                    <div class="input-field col s4">
-                        <input class="dislikes" type="text" class="validate">
-                        <label for="dislikes">Dislike 1</label>
+                        <input class="dislikes" id="dislike_1" type="text" class="validate">
+                        <label for="dislikes"  >Dislike 1</label>
                     </div>   
                     <div class="input-field col s4">
-                        <input class="dislikes" type="text" class="validate">
+                        <input class="dislikes" id="dislike_2" type="text" class="validate">
                         <label for="dislikes">Dislike 2</label>
                     </div>     
                     <div class="input-field col s4">
-                        <input class="dislikes" type="text" class="validate">
+                        <input class="dislikes" id="dislike_3" type="text" class="validate">
                         <label for="dislikes">Dislike 3</label> 
                     </div>
                 </div>                                                    
@@ -199,6 +197,7 @@
             </span>
             <span id="side-nav-main">
                 <div id="side-menu">
+                     <li><a href="/">Home</a></li>
                         <li><a href="shelter">Shelter</a></li>
                         <li><a href="adopter">Adopt</a></li>
                         <li><a href="faves">Favorites</a></li>
@@ -234,9 +233,7 @@
 </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
          <script src="assets/js/init.js"></script>
-        <script src="/models/dog.js"></script>
-        <script src="/models/shelter.js"></script>
-        <script src="assets/js/app.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <script src="assets/js/shelter.js"></script>
     </body>
 </html>

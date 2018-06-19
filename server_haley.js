@@ -18,7 +18,7 @@ app.use(express.static("public"));
 var NodeSession = require('node-session');
 
 // init
-var nodeSession = new NodeSession({secret: 'Q3UBzdH9GEfiRCTKbi5MTPyChpzXLsTD'});
+var nodeSession = new NodeSession({secret: 'HDFDFHFDHDFDHFSHFSHDJDFJD'});
 
 function session(req, res, next){
     nodeSession.startSession(req, res, next);
@@ -38,7 +38,7 @@ require("./routes/html-routes.js")(app);
 var routes_dogs = require("./controllers/dogs_controller.js");
 var routes_adopter = require("./controllers/adopter_controller.js");
 var routes_shelter = require("./controllers/shelter_controller.js");
-require("./controllers/emailController.js");
+require("./controllers/emailController.js")(app);
 require('./controllers/favouriteController.js')(app);
 
 

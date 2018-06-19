@@ -39,12 +39,15 @@ passport.use(new GoogleStrategy({
             if (user) {
                 var theUser = user.dataValues;
 
+                console.log("**********User Already Exists **************8")
+
                 app.use(function (req, res, next) {
                     req.session.set('user_id', theUser.user_id);
+                    req.session.set('email', email);
                     next();
                 });
-
                  return done(null, theUser);
+                
             }else {
                 var userPassword = generateHash(randomstring);
                 var data = {
@@ -58,8 +61,11 @@ passport.use(new GoogleStrategy({
                     }
 
                     if (newUser) {
+
+                      console.log("**********created new User **************8")
                        app.use(function (req, res, next) {
                           req.session.set('user_id', newUser.user_id);
+                           req.session.set('email', email);
                           next();
                       });
                          return done(null, newUser);

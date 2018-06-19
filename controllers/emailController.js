@@ -1,18 +1,25 @@
 var db = require("../models")
-var express = require("express")
-var router = express.Router();
 
- router.get('/getUserData', function (req, res) {
+
+
+module.exports = function (app) {
+
+ app.get('/getUserData', function (req, res) {
+
       console.log("getUserData");
-      var data = req.query;
-      db.User.findOne({
-        where: {
-          email: data.email
-        }
-      }).then(function(resData){
-      	console.log("resData")
-      	console.log(resData)
-        res.send(resData);
-      });
+
+       var email = req.session.get('email');
+       var user_id = req.session.get('user_id');
+
+      var data = {
+         email:email,
+         user_id:user_id
+      }
+      
+      console.log(data);
+
+      res.json(data);
     
 });
+
+};

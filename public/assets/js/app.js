@@ -1,9 +1,20 @@
 // Materialize JavaScript
 $(document).ready(function(){
 
-  /*$.get( "/api/me",function( data ,status) {
-      alert(JSON.stringify(data))
-  });*/
+    $('.modal').modal();
+    $('.sidenav').sidenav();
+    $('.tooltipped').tooltip();
+
+  $.get( "/getUserData",{},function( data ,status) {
+
+      if(data.email){
+        setCookie("email",data.email);
+      }
+      if(data.user_id){
+        setCookie("user_id",data.user_id)
+      }
+    
+  });
 
     var email = getCookie("email");
 
@@ -16,7 +27,7 @@ $(document).ready(function(){
     }
     $(".log-out-btn").on("click",function(){
        setCookie("email","");
-       location.reload();
+       location.href="/";
     });
 
     var imageURL = getCookie("image_url");
@@ -24,11 +35,9 @@ $(document).ready(function(){
        $(".user_url").attr("src",imageURL);
     }
 
-    $('.modal').modal()
-    $('.sidenav').sidenav()
-    $('.tooltipped').tooltip()
-    $('.carousel.carousel-slider').carousel({fullWidth: true});
-  })
+   
+
+
 var signUpHolder = $("#signup-holder")
 // Create Account
 $("#create-account").on("click", function(){
@@ -76,10 +85,8 @@ $("#e-signup").on("click", function(){
 
     <div class="section"></div>
     <div class="section"></div>
-  </main>
-    
- 
-    `)
+  </main> `);
+
     
     $("#login_btn").on("click",function(){
       var email = $("#email").val();
@@ -95,6 +102,7 @@ $("#e-signup").on("click", function(){
               if(email){
                   setCookie("email",email);
               }
+
                location.reload();
 
            $.get( "/getUserData",{email:email},function( data ,status) {
@@ -112,7 +120,8 @@ $("#e-signup").on("click", function(){
               if(imageURL){
                 setCookie("image_url",imageURL);
               }
-              location.reload();
+              location.href="/home";
+             
            });
 
         });
@@ -154,20 +163,6 @@ $("#dog-result").on("click", function(){
         alert("Added to Favorites")
     })
 })
-
-imageURL = "https://placeimg.com/640/480/animals"
-name = "Dog Name"
-dogStats = {
-    age: 1,
-    size: "Big",
-    activity: "Couch Potato",
-    likes: ["Like 1", "Like 2", "Like 3"],
-    dislikes: ["Dislike 1", "Dislike 2 ", "Dislike 3"],
-}
-dogInfo = "<div class='row'>Age:" + dogStats.age + "</div><div class='row'> Size: " + dogStats.size  + "</div>" +
-          "<div class='row'>Activity Level: " + dogStats.activity  + "</div>" +
-          "<div class='row'>Likes: " + dogStats.likes  + "</div>" +
-          "<div class='row'>Dislikes: " + dogStats.dislikes  + "</div>" 
 
 
 // Functions
@@ -233,3 +228,5 @@ $("#fetch").on("click",function(){
    });*/
 });
 
+
+  });

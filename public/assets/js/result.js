@@ -29,7 +29,7 @@ $(function(){
  // alert(JSON.stringify(params))
 
   $.get( "/api/dogs",params,function( data ,status) {
-           //console.log(data);
+           console.log(data);
            	loadData(data);
    });
 
@@ -52,7 +52,7 @@ function loadData(dogData){
 	                '<a class="btn-floating  waves-effect waves-light red  fav_btn" name="'+data.dog_name+'" id="'+data.id+'" ><i class="material-icons md-48 icon" >favorite_border</i></a>'+
 	            '</div><br>'+
 	               '<div >'+
-	                '<div class="row">Age:'+data.age+'</div><div class="row"> Size: Big</div>'+
+	                '<div class="row">Age:'+data.age+'</div><div class="row"> Size: '+data.dog_size+'</div>'+
 	                '<div class="row">Activity Level: '+data.activity_level+'</div>'+
 	                '<div class="row">Likes: <small>'+data.likes+'</small></div>'+
 	                '<div class="row">Dislikes: <small>'+data.dislikes+'</small></div>'+

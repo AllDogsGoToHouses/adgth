@@ -1,7 +1,6 @@
 var express = require("express")
 var router = express.Router();
-
-var db = require("../models")
+var db = require("../models");
 
 //Route to get all shelters
 router.get("/api/shelter", function(req, res){
@@ -22,10 +21,10 @@ router.post("/api/shelter", function(req, res){
 		shelter_number: req.body.shelter_number,
 		shelter_email: req.body.shelter_email,
 	}).then (function(dbShelter){
-		console.log("Adding new dog: ");
-		console.log(dbShelter);
+		console.log("Adding new Shelter: ");
+		//console.log(dbShelter);
 		//TODO: Do we want this action to redirect to the homepage?
-		res.redirect("/shelter");
+		res.send("Success");
 	})
 });
 

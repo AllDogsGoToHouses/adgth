@@ -25,18 +25,19 @@ router.get("/api/dogs", function(req, res){
 
 	var user_id = req.session.get("user_id");
 
-     sequelize.query("SELECT * FROM Dogs LEFT JOIN Favourites ON (Dogs.id = Favourites.dog_id AND user_id  != "+user_id, { type: sequelize.QueryTypes.SELECT})
+	db.Dog.findAll({
+		where:data
+	}).then(function(dbDog){
+		res.json(dbDog);
+	});
+
+	/*var query  = "SELECT * FROM Dogs LEFT JOIN Favourites ON (Dogs.id = Favourites.dog_id AND `user_id`  != "+user_id+")";
+	console.log("query: "+query)
+
+     sequelize.query(query, { type: sequelize.QueryTypes.SELECT})
           .then(dbDogs => {
             res.json(dbDogs);
-          })
-
-    db.Dog.findAll({
-    	where: data,
-    	attributes: { exclude: ['createdAt','updatedAt'] } 
-    })
-      .then(function(dbDogs) {
-        res.json(dbDogs);
-      });
+          })*/
 })
 
 //Route to create a new dog

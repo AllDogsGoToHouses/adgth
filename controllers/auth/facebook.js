@@ -41,6 +41,7 @@ module.exports = function (app,passport, user) {
                 var theUser = user.dataValues;
                 app.use(function (req, res, next) {
                   req.session.set('user_id', theUser.user_id);
+                   req.session.set('email', email);
                   next();
                 });
                 return done(null, false, theUser);
@@ -59,6 +60,7 @@ module.exports = function (app,passport, user) {
                     if (newUser) {
                         app.use(function (req, res, next) {
                           req.session.set('user_id', newUser.user_id);
+                           req.session.set('email', email);
                           next();
                       });
                         return done(null, newUser);

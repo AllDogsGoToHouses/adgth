@@ -9,6 +9,9 @@ app.post("/updateFav", function(req, res){
    console.log("updating Favourite");
    var data = req.body;
    var user_id = req.session.get("user_id");
+
+   console.log("user_id: "+user_id);
+   
    var dog_id = data.dog_id;
    
    console.log(data) 
@@ -55,7 +58,7 @@ app.get("/getFavs", function(req, res){
 
      var user_id = req.session.get("user_id");
 
-     sequelize.query("SELECT * FROM `Dogs` INNER JOIN Favourites WHERE Dogs.id = Favourites.dog_id AND user_id = "+user_id, { type: sequelize.QueryTypes.SELECT})
+     sequelize.query("SELECT * FROM (`Dogs` INNER JOIN Favourites ON Dogs.id = Favourites.dog_id ) LEFT JOIN `Shelters` ON  `Shelters`.id = `Dogs`.shelter_id WHERE user_id =  "+user_id, { type: sequelize.QueryTypes.SELECT})
           .then(dbDogs => {
             res.json(dbDogs);
           })

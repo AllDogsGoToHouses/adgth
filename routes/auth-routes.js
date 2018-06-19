@@ -31,22 +31,6 @@ module.exports = function(app,passport){
 	  });
 	
 
-	app.post("/registerEmail",function(req,res){
-	    console.log("Posted");
-	    var data = req.body; 
-	    console.log(data);
-	   var newUser = {};
-	    newUser.local.username = data.email;
-	    newUser.local.password = data.password;
-	    console.log(newUser.local.username + " " + newUser.local.password);
-	    newUser.save(function(err){
-	            if(err)
-	                    throw err;
-	    });
-	    res.redirect('/');
-	   
-	});
-
 	/* FACEBOOK ROUTER */
 	app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email']}));
 
@@ -55,14 +39,14 @@ module.exports = function(app,passport){
 	  passport.authenticate('facebook', { failureRedirect: '/' }),
 	  function(req, res) {
 	    // Successful authentication, redirect home.
-	    res.redirect('/');
+	    res.redirect('/home');
 	  });
 
 	/* GOOGLE ROUTER */
 	app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
 	app.get('/auth/google/callback', 
-	  passport.authenticate('google', { successRedirect: '/',
+	  passport.authenticate('google', { successRedirect: '/home',
 	                                      failureRedirect: '/' }));
 
 

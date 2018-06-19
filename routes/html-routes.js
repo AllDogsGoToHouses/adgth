@@ -6,7 +6,9 @@ module.exports = function(app) {
 
   // index route loads index.html
   app.get("/", function(req, res) {
-       req.session.set("views.power","timerless");
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+  app.get("/home", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 

@@ -18,6 +18,7 @@ function loadData(dogData){
 
  	var data = dogData[i];
 
+
 	var divPane = '<div>'+
 	      '<div class="row">'+
 	        '<div class="col s12 m12">'+
@@ -31,11 +32,11 @@ function loadData(dogData){
 	                '<a class="btn-floating  fav_btn waves-effect waves-light green "  name="'+data.dog_name+'" id="'+data.id+'"><i class="material-icons md-48 " >favorite</i></a>'+
 	            '</div><br>'+
 	               '<div >'+
-	                '<div class="row">Age:'+data.age+'</div><div class="row"> Size: Big</div>'+
-	                '<div class="row">Activity Level: '+data.activity_level+'</div>'+
+	                '<div class="row">Age: <small style="color:teal;">'+data.age+'</small> Size: <small style="color:teal;">'+data.dog_size+'</small> Activity Level:  <small style="color:teal;">'+data.activity_level+'</small></div>'+
 	                '<div class="row">Likes: <small>'+data.likes+'</small></div>'+
 	                '<div class="row">Dislikes: <small>'+data.dislikes+'</small></div>'+
-	                '<p></p>'+
+	                '<p><hr></p>'+
+	                '<div class="row">Shelter Name: <small style="color:teal;">'+data.shelter_name+'</small> <br>Manager: <small style="color:teal;">'+data.shelter_manager+'</small> Contact:  <small style="color:teal;">'+data.shelter_email+'</small></div>'+
 	            '</div>'+
 	            '</div>'+
 	          '</div>'+
