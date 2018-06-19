@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ADGTH | Saved Dogs</title>
+
+        <!-- Materialize -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Viga" rel="stylesheet">
+        <!-- FontAwesome: Google & Facebook Icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/body.css">
+
+</head>
+<main>
+    <body id="faves-page">
+        <nav>
+            <div class="nav-wrapper navbar-fixed">
+                <a href="index.html" class="brand-logo center"><img id="logo" src="assets/imgs/logo.png" alt="ADGTH Logo" /></a>
+                <span href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a></span>
+                <button class="right btn sign-up-btn modal-trigger" href="#log-in">Log In</button>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div ="adgth-text" >
+                <h1 class="center">Favorite Dogs</h1>
+                <a class="waves-effect waves-light btn test-btn mobile-hide" id="add-fave" >Add Dog to Favorites</a>
+            </div>
+            <div id="results">
+                <div class="row">
+                    <div id="faves-holder"></div>
+                </div>
+            </div>
+        </div>
+</main>
+<footer>
+    <div class="footer-copyright center footer-fixed">
+        <div class="container align-right">
+            © 2018 ADGTH
+        </div>
+    </div>
+</footer>
+    
+        <!-- JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/login.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    </body>
+</html>
+
+        
+
+        
+<!-- Side Nav -->
+<ul id="slide-out" class="sidenav">
+        <span id="side-nav-body">
+            <span id="side-nav-article">
+                <span id="side-nav-header">                
+                    <li>
+                        <div class="user-view">
+                            <div class="background">
+                                <img id="menu-1" class="right-align" src="assets/imgs/logo.png">
+                            </div>
+                        </div>
+                    </li>
+                </span>
+                <span id="side-nav-main">
+                    <div id="side-menu">
+                            <li><a href="shelter.html">Shelter</a></li>
+                            <li><a href="adopter.html">Adopt</a></li>
+                            <li><a href="faves.html">Favorites</a></li>
+                </span>    
+                    <footer id="side-nav-footer"> </footer>
+            </span>
+        </span>
+    </ul>
+    
+    
+    
+    <!-- Sign Up Modal -->
+    <div id="log-in" class="modal signup-modal">
+        <div class="modal-content ">
+        <div class="mod-title"><h5 id="create-account">Log In<a href="#!" class="modal-close back"><i class="right fas fa-times"></i></h5></div></a>
+            <div id="login-holder" class="center">
+                <button class="btn col s4 waves-effect waves-orange signup-btns email-login"><i class="fas fa-envelope"></i> Email </button>
+                <button class="btn col s4 waves-effect waves-orange signup-btns" id="facebook"><i class="fab fa-facebook-f"></i> Facebook </button></a><br>
+                <button class="btn col s4 waves-effect waves-orange signup-btns" id="gmail"><i class="fab fa-google-plus-g"></i> Google </button></a><br>
+                <div class="divider"></div><br><br>
+                <button class="btn signup-btns create-account">Create account</button>
+            </div>
+        </div>
+    </div>
+    
+    

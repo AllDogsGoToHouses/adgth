@@ -1,0 +1,193 @@
+/* index */
+#main{
+    background-image: url("../imgs/mobile.jpg");
+}
+
+
+/* Adopt */
+#adopt-page {
+    background-image: url("../imgs/01.jpg");
+    background-size: cover;
+}
+
+.select-adopt {
+    width: 200px;
+    margin: 1%;
+}
+#search-form, #adopter-info {
+    margin-top: 2.75%;
+}
+#signup{
+    margin-top: 1%;
+}
+select{
+    margin-bottom: 1%;
+}
+#facebook-signup, #google-signup, #email{
+    margin-top: 1%;
+    color: darkorange;
+}
+
+
+/* Shelter */
+#shelter-page {
+    background-image: url("../imgs/02.jpg");
+    background-size: cover;
+}
+#shelter-actions{
+    margin-top: 10%;
+}
+
+.btn{
+    margin: 1%;
+    width: 200px;
+}
+
+#shelter-view{
+    height:300px;
+    width: 400px;
+    background-color: whitesmoke;
+}
+
+#shelter-form, #dog-form {
+    margin-top: 5%
+}
+.mod-subtitle{
+    margin-top: 15%;
+}
+
+/* Faves */
+#faves-page {
+    background-image: url("../imgs/03.jpg");
+    background-size: cover;
+
+}
+
+
+/* Results */
+#results-page{
+    background-color: orange;
+    background-image: url("../imgs/04.jpg");
+    background-size: cover;
+}
+#side-menu{
+    margin-top: 40%;      
+}
+#login{
+    margin-top: 120%;
+    margin-left: 10%;
+}
+
+.mobile-show{
+    visibility: hidden;
+}
+
+.wrapper{
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-column-gap: 20px;
+}
+
+.img-link{
+    width: 100%;
+    border: 1px solid white;
+}
+
+.sign-up-btn{
+    width: 100px;
+}
+
+.top-left {
+    
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.signup-modal{
+    height: 80%;
+    width: 28%;
+}
+
+a:active{
+    color: black;
+}
+a:visited{
+    color: black;
+}
+a:hover{
+    color: orange;
+}
+.divider{
+    margin-top: 10%;
+}
+
+.signup-btns{
+    background-color: orange;
+    color: white;
+}
+
+.modal{
+    background-color: white;
+}
+/* Email Login */
+.input-field input[type=date]:focus + label,
+.input-field input[type=text]:focus + label,
+.input-field input[type=email]:focus + label,
+.input-field input[type=password]:focus + label {
+  color: #e91e63;
+}
+
+.input-field input[type=date]:focus,
+.input-field input[type=text]:focus,
+.input-field input[type=email]:focus,
+.input-field input[type=password]:focus {
+  border-bottom: 2px solid #e91e63;
+  box-shadow: none;
+}
+/* mobile */
+@media screen and (max-width: 500px) {
+    body, #shelter-page, #results-page, #faves-page {
+      background-image: url("../imgs/mobile.jpg");
+    }
+    .navbar-fixed {
+        padding-bottom:70px;
+    }
+    .mobile-hide{
+       display: none;
+    }
+    .mobile-show{
+        visibility: visible;
+    }
+    h1{
+        font-size: 40px;
+    }
+    h4{
+        font-size: 20px;
+        text-align: center;
+    }
+    h5{
+        font-size: 18px;
+        text-align: center;
+    }
+    #preferences{
+        margin-top: 50px;
+    }
+    #search-form{
+        margin-right: 60px;
+    }
+    .select-adopt, .signup{
+        width: 380px;
+    }
+    #adopter-info{
+        margin-top: 10px;
+    }
+    .signup-nav{
+        width: 280px;
+        text-align: center;
+    }
+    .add{
+        width: 300px;
+    }
+  }

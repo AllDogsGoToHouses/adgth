@@ -1,0 +1,20 @@
+{
+  "test": {
+    "username": "root",
+    "password": "chowder",
+    "database": "dogs_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "development": {
+    "username": "b50187286886ad",
+    "password": "301c0e86",
+    "database": "heroku_6d25e30d7fe5f42",
+    "host": "us-cdbr-iron-east-04.cleardb.net",
+    "dialect": "mysql"
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  }
+}

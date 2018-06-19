@@ -1,0 +1,75 @@
+#index-menu{
+    width: 1%;
+}
+
+body {
+    font-family: 'Viga', sans-serif; 
+    color: #2b1b0e;
+    background-attachment: fixed;
+}
+
+#logo {
+    height: 80px;
+}
+.nav-wrapper {
+    background-color: orange;
+}
+.btn{
+    background-color: white; 
+    color: orange;
+    }
+.btn:hover {
+    background-color: 	#ff9f00	;
+    color: white;
+}
+.signup:hover{
+    background-color: 	#ff9f00	;
+    color: white;
+}
+.signup-btns:hover{
+    background-color: teal; 
+
+
+}
+ #menu-1{
+     background-image: url("");
+     background-color: orange;
+     
+ }
+ .background{
+     height: 130px;
+ }
+
+ .sidenav{
+     background-color: orange;
+ }
+
+ #side-menu{
+     margin-top: 35%;
+ }
+
+.test-btn{
+    text-align: center;
+}
+
+.footer-copyright{
+    background-color: orange;
+    margin-top: 5%;
+    padding: 1%;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+button:active{
+    background-color: orange;
+}
+
+
+

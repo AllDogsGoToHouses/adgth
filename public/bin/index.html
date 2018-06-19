@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ADGTH | Adopt A Pet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Viga" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/body.css">
+</head>
+
+<main>
+    <body id="main">
+        <nav>
+            <div class="nav-wrapper navbar-fixed">
+                <a href="index.html" class="brand-logo center"><img id="logo" src="assets/imgs/logo.png" alt="ADGTH Logo" /></a>
+                <span href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a></span>
+                <button class="right btn sign-up-btn modal-trigger" href="#log-in">Log In</button>
+            </div>
+        </nav>
+    <div class="container">
+        <div id="adgth-text" class="center">
+            <h1>All Dogs Go to Houses</h1>
+            <h4>Every dog deserves a home <br>and every adopter a great match </h4>
+            <h5>Find your ideal pet match</h5>
+        </div>
+        <div class="wrapper">
+            <div>
+                <a href="adopter.html"><img class= "img-link" src="assets/imgs/adopt-dog.jpg" alt="dog"></a>
+            </div>
+            <div>
+                <a href="shelter.html"><img class= "img-link" src="assets/imgs/shelter-home.jpeg" alt="dog"></a>
+            </div>
+        </div>
+    </div>    
+</main>
+<footer>
+    <div class="footer-copyright center footer-fixed">
+        <div class="container align-right">
+            © 2018 ADGTH
+        </div>
+    </div>
+</footer>
+        <!-- JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="/models/index.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    </body>
+</html>
+
+
+        
+<!-- Side Nav -->
+
+<ul id="slide-out" class="sidenav">
+    <span id="side-nav-body">
+        <span id="side-nav-article">
+            <span id="side-nav-header">                
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img id="menu-1" class="right-align" src="assets/imgs/logo.png">
+                        </div>
+                    </div>
+                </li>
+            </span>
+            <span id="side-nav-main">
+                <div id="side-menu">
+                    <li><a href="shelter.html">Shelter</a></li>
+                    <li><a href="adopter.html">Adopt</a></li>
+                    <li><a href="faves.html">Favorites</a></li>
+            </span>    
+                <footer id="side-nav-footer"></footer>
+        </span>
+    </span>
+</ul>
+
+
+<!-- Sign Up Modal -->
+<div id="log-in" class="modal signup-modal">
+    <div class="modal-content ">
+    <div class="mod-title"><h5>Log In<a href="#!" class="modal-close back"><i class="right fas fa-times"></i></h5></div></a>
+        <div id="signup-holder" class="center">
+            <button class="btn col s4 waves-effect waves-orange signup-btns " id="email-login"><i class="fas fa-envelope"></i> Email </button>
+            <button class="btn col s4 waves-effect waves-orange signup-btns" id="facebook"><i class="fab fa-facebook-f"></i> Facebook </button><br>
+            <button class="btn col s4 waves-effect waves-orange signup-btns" id="gmail"><i class="fab fa-google-plus-g"></i> Google </button><br>
+            <div class="divider"></div><br><br>
+            <button class="btn signup-btns" id="create-account">Create account</button>
+ 
+        </div>
+    </div>
+</div>
+
+
+<script>
+var signUpHolder = $("#signup-holder")
+
+    // Opens Email Login
+$("#email-login").on("click", function(){
+    signUpHolder.html(`
+      <div class="container">
+        <div class="row" style="display: inline-block;">
+          <form class="col s12" method="post">
+            <div class='row'>
+              <div class='col s12'>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='email' name='email' id='email' />
+                <label for='email'>Enter your email</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='password' name='password' id='password' />
+                <label for='password'>Enter your password</label>
+              </div>
+              <label style='float: right;'>
+								<a href='#!'><b>Forgot Password?</b></a>
+							</label>
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect signup-btns'>Login</button>
+              </div>
+            </center>
+          </form>
+        </div>
+      </div>
+    </center>
+
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
+    
+    
+    
+    `)
+})
+</script>
