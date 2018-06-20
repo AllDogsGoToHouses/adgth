@@ -9,11 +9,11 @@ Log in or create an account, and then flip through dogs currently seeking adopti
 Please try out the deployed app in Heroku, found [here](https://adgth.herokuapp.com/).
 
 ## Authors
-[Haley](https://github.com/dandridgehc)
+[Haley Dandridge](https://github.com/dandridgehc)
 
 [Jessie Ramriez](https://github.com/jbong0)
 
-[Jared](https://github.com/wodjafink)
+[Jared Mednick](https://github.com/wodjafink)
 
 [Damian Bennett](https://github.com/maogdamian)
 
